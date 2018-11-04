@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Number of Paths and Timesteps
-paths = 1000
+paths = 5
 n = 100
 T = 1
 delta = T/n
@@ -45,4 +45,5 @@ for i in range(1,paths+1):
 print("Mean is: " + str(np.sum(res)/len(res)))
 
 plt.xlim(0)
+plt.title("Wiener Process - Sample")
 plt.show()
