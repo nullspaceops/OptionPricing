@@ -1,0 +1,10 @@
+*.suo
+*.user
+*.cachefile
+.vs
+obj
+packages
+todo.txt
+todo
+notes
+notes.txt
