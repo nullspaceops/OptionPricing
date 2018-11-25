@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Number of Paths and Timesteps
-paths = 5
+paths = 15
 n = 100
 T = 1
 delta = T/n
@@ -22,7 +22,7 @@ sigma = 1.0
 
 # Creates an array for iteration. 
 # It will look like [1.,2.,3......n-1,n]
-x = range(1, len(S))
+x = range(1, len(S)+1)
 
 # This function simulates one path, see Rüdiger Seydel
 def wiener():
