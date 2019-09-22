@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
+import scipy.stats as stats
+import seaborn as sns
 
 def simple_quantile(X, quantile):
     """This function just provides a working minimum example for calculating a quantile with numpy & pandas from the "standard normal" distribution
@@ -8,7 +10,6 @@ def simple_quantile(X, quantile):
     X - the np.array with our realisation
     quantile - The quantiles to be calculated (as array)"""
 
-    X.sort()              # sorts ascending
     dX = pd.DataFrame(X)  # creates a Panda DataFrame
 
     # Get key indicators about the realisation
@@ -20,11 +21,12 @@ def simple_quantile(X, quantile):
     
     return dX.quantile(quantile)
 
-number = 10000
+number = 2000000
 sigma = 1.
 mu = 0.
 
 X =  sigma * np.random.randn(number) + mu
-plt.hist(X, bins=50)
+plt.hist(X, bins=50, density=True)
+sns.distplot(X);
 plt.show()
-print(simple_quantile(X, [.1, .5, .75]))
+print(simple_quantile(X, [.01, .1, .5, .75, .99]))

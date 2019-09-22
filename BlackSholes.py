@@ -21,9 +21,9 @@ def euro_vanilla(B, S, T, r, sigma, type="call"):
 
     return result
 
-def greeks_(B, S, T, r, sigma, type="call"):
+def first_order_greeks(B, S, T, r, sigma, type="call"):
 
-    # Still WIP - only first order greeks
+    # Still WIP
 
     d1 = (np.log(B / S) + (r + 0.5 * sigma ** 2) * T) / (sigma * np.sqrt(T))
     d2 = (np.log(B / S) + (r - 0.5 * sigma ** 2) * T) / (sigma * np.sqrt(T))
@@ -33,7 +33,7 @@ def greeks_(B, S, T, r, sigma, type="call"):
     if type == "put":
         delta = si.norm.cdf(d1, 0.0, 1.0) - 1
 
-    return true
+    return delta
 
 print(euro_vanilla(50, 100, 1, 0.05, 0.25, "put"))
 print(euro_vanilla(50, 100, 1, 0.05, 0.25, "call"))
